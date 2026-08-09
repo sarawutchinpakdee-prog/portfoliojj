@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ศราวุฒิ ชินภักดี (JJ) | IT Student &amp; Aspiring Full-Stack Developer</title>
+  <meta name="description" content="Portfolio ของศราวุฒิ ชินภักดี (เจเจ) นักศึกษาเทคโนโลยีสารสนเทศ วิทยาลัยอาชีวศึกษาร้อยเอ็ด กำลังพัฒนาทักษะสู่การเป็น Full-Stack Developer" />
+  <meta name="theme-color" content="#07090c" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ศราวุฒิ ชินภักดี (JJ) | IT Student & Aspiring Full-Stack Developer" />
+  <meta property="og:description" content="Portfolio ของศราวุฒิ ชินภักดี (เจเจ) นักศึกษาเทคโนโลยีสารสนเทศ กำลังพัฒนาทักษะสู่การเป็น Full-Stack Developer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%92%BB</text></svg>" />
+</head>
+<body>
+  <!-- ===================== Navbar ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">
+        <span class="nav__prompt">&gt;_</span> jj<span class="nav__logo-dot">.</span>dev
+      </a>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home" class="nav__link active-link" data-idx="00">Home</a></li>
+        <li><a href="#about" class="nav__link" data-idx="01">About</a></li>
+        <li><a href="#skills" class="nav__link" data-idx="02">Skills</a></li>
+        <li><a href="#projects" class="nav__link" data-idx="03">Projects</a></li>
+        <li><a href="#education" class="nav__link" data-idx="04">Education</a></li>
+        <li><a href="#interests" class="nav__link" data-idx="05">Interests</a></li>
+        <li><a href="#contact" class="nav__link" data-idx="06">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="สลับ Dark/Light Mode" title="สลับธีม">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="nav__toggle" id="navToggle" aria-label="เปิดเมนู">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== Hero ===================== -->
+    <section id="home" class="hero container">
+      <div class="hero__content" data-reveal>
+        <p class="tag">// 00. whoami</p>
+
+        <h1 class="hero__name">
+          <span class="hero__hello">Wellcome</span>
+          ศราวุฒิ ชินภักดี
+          <span class="hero__nickname">"เจเจ"</span>
+        </h1>
+
+        <p class="hero__role">
+          <span id="roleTyped"></span><span class="caret">_</span>
+        </p>
+
+        <p class="hero__desc" id="heroDesc"></p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">ดูผลงานของฉัน</a>
+          <a href="#contact" class="btn btn--outline">ติดต่อฉัน</a>
+        </div>
+
+        <div class="hero__socials" id="heroSocials"></div>
+      </div>
+
+      <div class="hero__visual" data-reveal data-reveal-delay="150">
+        <div class="terminal-frame">
+          <div class="terminal-frame__bar">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="terminal-frame__name">profile.jpg</span>
+          </div>
+          <div class="terminal-frame__body">
+            <img
+              src="img/50489b53-0609-4932-ada2-0cb1c81eec42.png"
+              onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';"
+              alt="รูปโปรไฟล์ของศราวุฒิ ชินภักดี"
+              class="hero__image"
+            />
+            <div class="hero__image-fallback">
+              <span>JJ</span>
+            </div>
+            <div class="scanline"></div>
+          </div>
+        </div>
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          กำลังเรียนรู้ &amp; พัฒนาอยู่
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section id="about" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="tag">// 01. about</p>
+        <h2 class="section__title">เกี่ยวกับฉัน</h2>
+      </div>
+
+      <div class="about__grid">
+        <div data-reveal>
+          <p class="about__text" id="aboutText"></p>
+          <p class="about__motto" id="aboutMotto"></p>
+        </div>
+
+        <div class="card card--accent" data-reveal data-reveal-delay="100">
+          <ul class="info-list" id="infoList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Skills ===================== -->
+    <section id="skills" class="section section--alt">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="tag">// 02. skills</p>
+          <h2 class="section__title">ทักษะของฉัน</h2>
+          <p class="section__subtitle">เทคโนโลยีที่กำลังเรียนรู้และพัฒนาอย่างต่อเนื่อง</p>
+        </div>
+
+        <div class="skills__grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section id="projects" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="tag">// 03. projects</p>
+        <h2 class="section__title">ผลงานของฉัน</h2>
+        <p class="section__subtitle">ผลงานและโปรเจกต์ที่เคยลงมือทำ</p>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- ===================== Education ===================== -->
+    <section id="education" class="section section--alt">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="tag">// 04. education</p>
+          <h2 class="section__title">เส้นทางการศึกษา</h2>
+        </div>
+
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- ===================== Interests ===================== -->
+    <section id="interests" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="tag">// 05. interests</p>
+        <h2 class="section__title">สิ่งที่ฉันสนใจ</h2>
+      </div>
+
+      <div class="interests__grid" id="interestsGrid"></div>
+    </section>
+
+    <!-- ===================== Goal ===================== -->
+    <section class="goal">
+      <div class="goal__grid-bg" aria-hidden="true"></div>
+      <div class="container goal__content">
+        <div data-reveal>
+          <p class="tag">// my_goal</p>
+          <h2 class="goal__title">FULL-STACK<br />DEVELOPER</h2>
+          <p class="goal__desc" id="goalText"></p>
+          <div class="goal__path" id="goalPath"></div>
+        </div>
+
+        <div class="terminal-frame terminal-frame--goal" data-reveal data-reveal-delay="150">
+          <div class="terminal-frame__bar">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="terminal-frame__name">~/jj — goal.sh</span>
+          </div>
+          <pre class="terminal-frame__console" id="goalConsole"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Contact ===================== -->
+    <section id="contact" class="section container">
+      <div class="section__head" data-reveal>
+        <p class="tag">// 06. contact</p>
+        <h2 class="section__title">ติดต่อฉัน</h2>
+        <p class="section__subtitle">สนใจร่วมงานหรืออยากพูดคุย ทักมาได้เลยครับ</p>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__info" id="contactSocials" data-reveal></div>
+
+        <form class="card contact__form" id="contactForm" data-reveal data-reveal-delay="100" novalidate>
+          <div class="form__group">
+            <label for="name">ชื่อ</label>
+            <input type="text" id="name" name="name" placeholder="ชื่อของคุณ" required />
+          </div>
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form__group">
+            <label for="message">ข้อความ</label>
+            <textarea id="message" name="message" rows="5" placeholder="พิมพ์ข้อความถึงฉัน..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">ส่งข้อความ</button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="container footer__content">
+      <p class="footer__copy">© 2026 Sarawut Chinpakdee</p>
+      <p class="footer__motto" id="footerMotto"></p>
+      <div class="footer__socials" id="footerSocials"></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="กลับขึ้นด้านบน">↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
