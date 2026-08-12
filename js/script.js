@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initRevealOnScroll();
   initContactForm();
   initBackToTop();
+  initStarfield();
 });
 
 /* ------------------------------ Theme -------------------------------------- */
@@ -400,4 +401,113 @@ function initBackToTop() {
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
+
+/* ------------------------------ 3D Starfield background ----------------------- */
+function initStarfield() {
+  const canvas = document.getElementById("bgCanvas");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const SPEED = reduceMotion ? 0 : 2.2;
+  const ACCENT_RGB = "45, 212, 191";
+
+  let w, h, cx, cy, stars;
+
+  function starColor() {
+    return document.documentElement.getAttribute("data-theme") === "light" ? "16, 20, 28" : "233, 237, 243";
+  }
+
+  function makeStar() {
+    return {
+      x: (Math.random() - 0.5) * w,
+      y: (Math.random() - 0.5) * h,
+      z: Math.random() * w,
+      pz: 0,
+      accent: Math.random() < 0.22,
+    };
+  }
+
+  function resize() {
+    w = canvas.width = window.innerWidth * dpr;
+    h = canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+    cx = w / 2;
+    cy = h / 2;
+    const count = Math.min(160, Math.floor((window.innerWidth * window.innerHeight) / 8000));
+    stars = Array.from({ length: count }, makeStar);
+    stars.forEach((s) => (s.pz = s.z));
+  }
+
+  function frame() {
+    const color = starColor();
+    ctx.clearRect(0, 0, w, h);
+    const projected = [];
+
+    for (const s of stars) {
+      s.pz = s.z;
+      s.z -= SPEED;
+      if (s.z <= 1) {
+        Object.assign(s, makeStar(), { z: w, pz: w });
+      }
+
+      const sx = (s.x / s.z) * w + cx;
+      const sy = (s.y / s.z) * h + cy;
+      const px = (s.x / s.pz) * w + cx;
+      const py = (s.y / s.pz) * h + cy;
+      const depth = 1 - s.z / w;
+      projected.push({ sx, sy, px, py, depth, accent: s.accent });
+    }
+
+    /* connect nearby, sufficiently-close stars — constellation lines */
+    const maxDist = 130 * dpr;
+    for (let i = 0; i < projected.length; i++) {
+      const a = projected[i];
+      if (a.depth < 0.15) continue;
+      for (let j = i + 1; j < projected.length; j++) {
+        const b = projected[j];
+        if (b.depth < 0.15) continue;
+        const dx = a.sx - b.sx;
+        const dy = a.sy - b.sy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < maxDist) {
+          const alpha = (1 - dist / maxDist) * Math.min(a.depth, b.depth) * 0.5;
+          ctx.strokeStyle = `rgba(${color}, ${alpha})`;
+          ctx.lineWidth = dpr;
+          ctx.beginPath();
+          ctx.moveTo(a.sx, a.sy);
+          ctx.lineTo(b.sx, b.sy);
+          ctx.stroke();
+        }
+      }
+    }
+
+    for (const p of projected) {
+      const size = Math.max(0.4, p.depth * 2.6) * dpr;
+      const alpha = Math.min(1, p.depth * 1.3);
+      ctx.fillStyle = `rgba(${p.accent ? ACCENT_RGB : color}, ${alpha})`;
+
+      if (reduceMotion) {
+        ctx.beginPath();
+        ctx.arc(p.sx, p.sy, size, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        ctx.strokeStyle = ctx.fillStyle;
+        ctx.lineWidth = size;
+        ctx.beginPath();
+        ctx.moveTo(p.px, p.py);
+        ctx.lineTo(p.sx, p.sy);
+        ctx.stroke();
+      }
+    }
+
+    if (!reduceMotion) requestAnimationFrame(frame);
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+  requestAnimationFrame(frame);
 }
