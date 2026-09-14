@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ข้อมูลนักเรียน (ทำเอง)</title>
+    <link rel="stylesheet" href="assets/css/output.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+
+
+    <main
+      id="main"
+      class="max-w-7xl mx-auto my-4 md:my-8 grid grid-cols-3 gap-4"
+    >
+      <form>
+        <div class="mb-2">
+          <label
+            for="std_id"
+            class="mb-2 text-slate-900 text-black font-medium text-sm inline-block"
+            >ป้อนรหัสนักศึกษา</label
+          >
+          <input
+            type="text"
+            id="std_id"
+            maxlength="11"
+            placeholder="ตัวเลข 11 หลัก"
+            class="px-2.5 py-2 text-sm  dark:text-slate-50 rounded-md bg-white dark:bg-neutral-800 w-full outline-1 -outline-offset-1 outline-slate-300 dark:outline-neutral-700 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-600"
+          />
+        </div>
+
+
+        <div id="message" class="text-red-600 text-center my-3"></div>
+
+
+        <input
+          type="button"
+          value="ค้นหาข้อมูล"
+          onclick="doSearch()"
+          class="px-3.5 py-2 text-white text-sm font-semibold cursor-pointer bg-green-600 hover:bg-green-700 border border-green-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
+        />
+
+
+        <div id="data" class="mt-6 border border-gray-300 rounded-xl p-4"></div>
+      </form>
+    </main>
+  </body>
+</html>
+
+
+<script>
+  // สร้างฟังก์ชันชื่อ doSearch
+  async function doSearch() {
+    const student_id = document.querySelector("#std_id").value;
+
+
+    // ตรวจสอบว่างไหม, ยาวไม่ถึง 11 หลัก, ตัวเลขเท่านั้น
+    // if (student_id.length == 0) {
+    if (!student_id || student_id.length < 11 || isNaN(Number(student_id))) {
+      document.querySelector("#message").textContent = "ตรวจสอบข้อมูล";
+      setTimeout(() => {
+        document.querySelector("#message").textContent = "";
+      }, 3000); // 3000 = 3 วินาที
+      return;
+    }
+
+
+    await fetch(`http://surachai.edit.in.th:9000/api/student/${student_id}`)
+      .then((response) => response.json())
+      .then((res) => {
+        if (!res.success) {
+          document.querySelector("#message").textContent = "ไม่เจอจ๊ะ";
+          return;
+        }
+
+
+        res.data.map((student) => {
+          document.querySelector("#data").innerHTML = `
+                    <li>รหัสนักศึกษา: ${student.student_id}</li>
+                    <li>ชื่อนักศึกษา: ${student.student}</li>
+                    <li>อีเมล: ${student.email}</li>
+                    <li>ที่อยู่: ${student.address}</li>
+                `;
+        });
+      });
+  }
+
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const header = document.querySelector("#header");
+    await fetch("components/navbar.html")
+      .then((response) => response.text())
+      .then((res) => {
+        header.innerHTML = res;
+      });
+  });
+</script>

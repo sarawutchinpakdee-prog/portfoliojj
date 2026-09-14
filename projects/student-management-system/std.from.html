@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ฟอร์มนักเรียน</title>
+    <link rel="stylesheet" href="assets/css/output.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+
+
+    <main
+      id="main"
+      class="max-w-7xl mx-auto my-4 md:my-8 grid grid-cols-1 gap-4"
+    >
+      <div class="mb-3 flex flex-col">
+        <label for="student_id" class="mb-2">รหัสนักศึกษา</label>
+        <input
+          type="text"
+          id="student_id"
+          maxlength="11"
+          placeholder="รหัสนักศึกษาเป็น ตัวเลข 11 หลัก"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        />
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label for="student" class="mb-2">ชื่อนักศึกษา</label>
+        <input
+          type="text"
+          id="student"
+          placeholder="ชื่อนักศึกษา"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        />
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label for="email" class="mb-2">อีเมล</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="อีเมล"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        />
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label for="address" class="mb-2">ที่อยู่</label>
+        <textarea
+          id="address"
+          rows="6"
+          placeholder="ที่อยู่"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        ></textarea>
+      </div>
+
+
+      <div id="err" class="text-red-500 text-center text-2xl"></div>
+
+
+      <div class="mb-2">
+        <button
+          onclick="doSubmit()"
+          type="button"
+          class="px-2.5 py-1.5 text-white text-sm font-semibold rounded-md cursor-pointer bg-blue-600 hover:bg-blue-700 border border-blue-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          บันทึกข้อมูลนักเรียน
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+<script>
+  // ใส่เหตุการณ์ เมื่อเอกสารนี้โหลดเสร็จ
+  document.addEventListener("DOMContentLoaded", async () => {
+    const header = document.querySelector("#header");
+    await fetch("components/navbar.html")
+      .then((response) => response.text())
+      .then((res) => {
+        header.innerHTML = res;
+      });
+  });
+
+
+  // ฟังก์ชัน doSubmit
+  async function doSubmit() {
+    let student_id = document.querySelector("#student_id").value;
+    let student = document.querySelector("#student").value;
+    let email = document.querySelector("#email").value;
+    let address = document.querySelector("#address").value;
+
+
+    // console.log(student_id, student, email, address);
+
+
+    if (!student_id || !student || !address) {
+      document.querySelector("#err").textContent = "เติมข้อมูลให้ครบ";
+      setTimeout(() => {
+        document.querySelector("#err").textContent = "";
+      }, 2000);
+      return;
+    }
+
+
+    // รหัสมีความยาวไม่เท่ากับ 11  และ   ไม่ใช่ตัวเลข (isNaN: (is Not a Number): เป็นตัวเลขหรือไม่)
+
+    let regStdID = /^\d{11}$/;
+    
+    if (!regStdID.test(student_id)) {
+      document.querySelector("#err").textContent = "รหัสเป็นตัวเลข 11 หลัก";
+      setTimeout(() => {
+        document.querySelector("#err").textContent = "";
+      }, 2000);
+      return;
+    }
+
+
+   
+
+
+    // อีเมลถูกรูปแบบไหม
+    // regular expression
+    if (email.length != 0) {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+      // หากตัวแปร email ไม่ถูกรูปแบบตามตัวแปร emailRegex
+      if (!emailRegex.test(email)) {
+        document.querySelector("#err").textContent = "รูปแบบอีเมล ไม่ถูกต้อง";
+        setTimeout(() => {
+          document.querySelector("#err").textContent = "";
+        }, 2000);
+        return;
+      }
+    }
+
+
+        let data = {
+      student_id: student_id,
+      student: student,
+      email: email,
+      address: address,
+    };
+
+
+    await fetch("http://surachai.edit.in.th:9000/api/student", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // Tell the server you're sending JSON
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (res.success) {
+            window.location = "student.html";
+        } else {
+          alert("ผิดพลาด");
+        }
+      });
+
+
+   
+  }
+
+</script>
+

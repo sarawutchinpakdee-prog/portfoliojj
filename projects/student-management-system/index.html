@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ระบบงานทะเบียน @101</title>
+    <link rel="stylesheet" href="assets/css/output.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <main class="max-w-7xl mx-auto my-4 md:my-8">
+      <section class="mt-6 px-4 md:px-8">
+        <div
+          class="grid items-center gap-12 max-w-2xl mx-auto lg:grid-cols-2 lg:max-w-7xl"
+        >
+          <div>
+            <h2
+              class="text-3xl font-bold mb-6 text-slate-900 md:text-4xl dark:text-slate-50"
+            >
+              Discover the Future of Innovation
+            </h2>
+            <p
+              class="mb-4 text-base text-slate-600 leading-relaxed dark:text-slate-400"
+            >
+              Unlock the power of data-driven decision making with our
+              intelligent dashboard tools. Track performance metrics, visualize
+              trends, and gain meaningful insights—all in one place. Whether
+              you're managing a team, launching a new product, or optimizing
+              business operations, our platform keeps you informed and ahead of
+              the curve.
+            </p>
+            <p
+              class="mb-4 text-base text-slate-600 leading-relaxed dark:text-slate-400"
+            >
+              Seamlessly analyze key performance indicators across different
+              departments. From revenue growth to engagement stats, customize
+              the view to focus on what matters most to your goals.
+            </p>
+            <p
+              class="text-base text-slate-600 leading-relaxed dark:text-slate-400"
+            >
+              Our intuitive interface is designed for speed and clarity. No
+              steep learning curves, no clutter—just powerful tools that let you
+              turn data into action.
+            </p>
+          </div>
+          <div class="w-full aspect-20/11 -order-1 lg:order-0">
+            <img
+              src="https://readymadeui.com/images/kpis-dashboard-img.webp"
+              alt="kpis dashboard"
+              class="rounded-lg object-contain w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const header = document.querySelector("#header");
+    await fetch("components/navbar.html")
+      .then((response) => response.text())
+      .then((res) => {
+        header.innerHTML = res;
+      });
+  });
+</script>

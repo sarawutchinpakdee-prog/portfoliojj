@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        ทำเอง
+    </title>
+    <link rel="stylesheet" href="assets/css/output.css">
+</head>
+<body>
+    
+    <div id="header"></div>
+
+    <main class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold mb-4">ข่าว ทำเอง</h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400">
+            นี่คือหน้าเว็บสำหรับแสดงข่าวที่สร้างขึ้นเอง
+        </p>
+
+        <div id = "news"></div>
+    </main>
+
+</body>
+</html>
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const header = document.querySelector("#header");
+    await fetch("components/navbar.html")
+      .then((response) => response.text())
+      .then((res) => {
+        header.innerHTML = res;
+      });
+
+      const news = document.querySelector("#news");
+      await fetch("http://202.29.239.178:9000/api/news?status=1&limit=5")
+      .then((response)=> response.json())
+      .then((res)=>{
+        
+        news.innerHTML = res.data.map((news) => `
+          <div class="rounded-lg border border-slate-200 p-4 shadow-sm dark:border-slate-700">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-50 s">
+              ${news.title}
+            </h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              ${news.name} · ${new Date(news.dt).toLocaleDateString("th-TH")}
+            </p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+              ${news.detail}
+            </p>
+            <a href="${news.file}" target="_blank" rel="noopener noreferrer"
+               class="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline dark:text-blue-400">
+              ดูรายละเอียด
+            </a>
+          </div>
+        `).join("");
+      })
+  });
+</script>

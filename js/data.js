@@ -38,7 +38,7 @@ const journeySteps = [
 
 const socialLinks = [
   { name: "Instagram", handle: "j4njayy_", url: "https://instagram.com/j4njayy_", icon: "instagram" },
-  { name: "Facebook", handle: "Sarawut", url: "https://facebook.com/Sarawut", icon: "facebook" },
+  { name: "Facebook", handle: "Sarawut", url: "https://facebook.com/sarawutJjx", icon: "facebook" },
   { name: "GitHub", handle: "sarawutchinpakdee-prog", url: "https://github.com/sarawutchinpakdee-prog", icon: "github" },
 ];
 
@@ -118,25 +118,16 @@ const projectsData = [
     description: "ระบบจัดการข้อมูลนักเรียน บันทึกและค้นหาข้อมูลได้สะดวก",
     technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     image: "",
-    demoUrl: "#",
+    demoUrl: "projects/student-management-system/index.html",
     githubUrl: "#",
   },
   {
-    id: 3,
-    title: "University Portfolio Guide",
-    description: "เว็บไซต์แนะนำแนวทาง Portfolio ของมหาวิทยาลัยและคณะต่าง ๆ เพื่อเป็นแนวทางให้รุ่นน้อง",
-    technologies: ["HTML", "CSS", "JavaScript"],
+    id: 5,
+    title: "Movie App",
+    description: "เว็บไซต์แนะนำและดูข้อมูลภาพยนตร์ ออกแบบด้วย Tailwind CSS",
+    technologies: ["HTML", "Tailwind CSS", "JavaScript"],
     image: "",
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 4,
-    title: "AI Web Project",
-    description: "โปรเจกต์เว็บไซต์ที่นำ AI มาช่วยในการทำงาน",
-    technologies: ["JavaScript", "API", "AI"],
-    image: "",
-    demoUrl: "#",
+    demoUrl: "projects/movie-app/index.html",
     githubUrl: "#",
   },
 ];

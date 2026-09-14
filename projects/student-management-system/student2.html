@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ข้อมูลนักเรียน (ทำเอง)</title>
+    <link rel="stylesheet" href="assets/css/output.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+
+
+    <main
+      id="main"
+      class="max-w-7xl mx-auto my-4 md:my-8 grid grid-cols-1 md:grid-cols-4 gap-4"
+    ></main>
+  </body>
+</html>
+
+
+<script>
+  async function doDelete(id) {
+    if (confirm(`ท่านต้องการลบนักเรียนรหัส ${id} หรือไม่`)) {
+      await fetch(`http://surachai.edit.in.th:9000/api/student/${id}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((res) => {
+          if (res.success) {
+            // ให้เปิดไฟล์ student2.html ใหม่
+            window.location = "student2.html";
+          } else {
+            alert("Not OK");
+          }
+        });
+    }
+  }
+
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const header = document.querySelector("#header");
+    await fetch("components/navbar.html")
+      .then((response) => response.text())
+      .then((res) => {
+        header.innerHTML = res;
+      });
+
+
+    // endpoint: ปลายทาง หรือ URL สำหรับการดึงข้อมูล
+    await fetch("http://surachai.edit.in.th:9000/api/student")
+      .then((response) => response.json())
+      .then((res) => {
+        if (res.success) {
+          res.data.map((s) => {
+            document.querySelector("#main").innerHTML +=
+              `<div class="border border-gray-300 rounded-2xl px-4 py-8 flex flex-col">
+                ${s.student} (${s.student_id})
+                <div class="flex justify-content my-4">
+                  <a href="mailto:${s.email}" class="text-blue-600 hover:text-blue-700">${s.email}</a>
+                <img onclick="doDelete(${s.student_id})" src="assets/images/delete-2-svgrepo-com.svg" class="w-6 ml-5: cursor-pointer" />
+
+
+                <a href="student2-edit.html?id=${s.student_id}">
+                <img src ="assets/images/edit-svgrepo-com.svg" class="w-6 ml-5 cursor-pointer" />
+                </a>
+                </div>
+               
+              </div>`;
+            
+          });
+        } else {
+          document.querySelector("#main").innerHTML = "Not OK";
+        }
+      });
+  });
+</script>
+

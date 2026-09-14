@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body>
+    <nav class="bg-white border-b border-gray-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+    <div class="flex h-16 items-center justify-between">
+      <div class="md:flex md:items-center md:gap-12">
+        <a class="block text-teal-600" href=".">
+          <span class="sr-only">Home</span>
+        <img src = "img/slate.svg" alt = "logo" class = "h-8 w-auto  ">
+        </a>
+      </div>
+
+      <div class="hidden md:block">
+        <nav aria-label="Global">
+          <ul class="flex items-center gap-6 text-sm">
+            <li>
+              <a class="text-gray-500 transition hover:text-gray-500/75" href="about.html"> เกี่ยวกับเรา </a>
+            </li>
+
+            <li>
+              <a class="text-gray-500 transition hover:text-gray-500/75" href="batman.html"> spider-man </a>
+            </li>
+
+            <li>
+              <a class="text-gray-500 transition hover:text-gray-500/75" href="superman.html"> superman </a>
+            </li>
+
+           
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="sm:flex sm:gap-4">
+          <a
+            class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
+            href="#"
+          >
+            Login
+          </a>
+
+          <div class="hidden sm:flex">
+            <a
+              class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+              href="#"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+
+        <div class="block md:hidden">
+          <button
+            class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+          >
+            <span class="sr-only">Toggle menu</span>
+
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<nav>
+
+  </div>
+</>
+    <main class="bg-gray-50 min-h-screen">
+      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+        <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">รายการหนัง</h1>
+        <p class="mt-1 text-sm text-gray-500">ผลการค้นหาสำหรับ "superman"</p>
+
+        <div id="show" class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"></div>
+      </div>
+    </main>
+
+
+</body>
+
+<script>
+  let apikey = "55166850"
+  let show = document.getElementById("show");
+
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    await fetch(`https://www.omdbapi.com/?apikey=55166850&s=superman `).then(
+      async (res) => {
+        let movies = await res.json();
+        for (const m of movies.Search) {
+         // show.innerHTML += `ชื่อหนัง: ${m.Title} <br> ปีที่สร้าง: ${m.Year}<br> รหัสหนัง: ${m.imdbID}<br> ประเภท: ${m.Type}<br> ที่อยู่โปสเตอร์: ${m.Poster}<hr />`;
+
+
+         show.innerHTML += `<div class="group overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200 transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+  <div class="aspect-[2/3] w-full overflow-hidden bg-gray-100">
+    <img
+      alt="${m.Title}"
+      src="${m.Poster}"
+      class="h-full w-full object-cover transition duration-200 group-hover:scale-105"
+    />
+  </div>
+
+  <div class="p-3">
+    <h3 class="truncate font-semibold text-gray-900" title="${m.Title}">${m.Title}</h3>
+
+    <p class="mt-1 text-xs text-gray-500">
+        ${m.Year} &middot; ${m.Type}
+    </p>
+    <p class="mt-0.5 truncate text-xs text-gray-400" title="${m.imdbID}">
+        รหัสหนัง: ${m.imdbID}
+    </p>
+  </div>
+</div>`
+
+        }
+
+      },
+    );
+  });
+</script>
+
+
+</html>

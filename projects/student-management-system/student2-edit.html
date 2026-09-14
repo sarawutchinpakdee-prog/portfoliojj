@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แก้ไข</title>
+    <link rel="stylesheet" href="assets/css/output.css">
+</head>
+<body>
+    <header id="header"></header>
+    <main id="main"
+      class="max-w-7xl mx-auto my-4 md:my-8 grid grid-cols-1 gap-4">
+
+      <div class="mb-3 flex flex-col">
+        <label for="student_id" class="mb-2">รหัสนักศึกษา</label>
+        <input
+          type="text"
+          id="student_id"
+          readonly
+          maxlength="11"
+          placeholder="รหัสนักศึกษาเป็น ตัวเลข 11 หลัก"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        />
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label for="student" class="mb-2">ชื่อนักศึกษา</label>
+        <input
+          type="text"
+          id="student"
+          placeholder="ชื่อนักศึกษา"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        />
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label for="email" class="mb-2">อีเมล</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="อีเมล"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        />
+      </div>
+      <div class="mb-3 flex flex-col">
+        <label for="address" class="mb-2">ที่อยู่</label>
+        <textarea
+          id="address"
+          rows="6"
+          placeholder="ที่อยู่"
+          class="border border-gray-300 py-2 px-4 rounded-xl"
+        ></textarea>
+      </div>
+
+
+      <div id="err" class="text-red-500 text-center text-2xl"></div>
+
+
+      <div class="mb-2">
+        <button
+          onclick="doSubmit()"
+          type="button"
+          class="px-2.5 py-1.5 text-white text-sm font-semibold rounded-md cursor-pointer bg-blue-600 hover:bg-blue-700 border border-blue-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          บันทึกข้อมูลนักเรียน
+        </button>
+      </div>
+    </main>
+</body>
+</html>
+<script>
+    async function dosubmit(){
+        
+    }
+
+
+
+
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const header = document.querySelector("#header");
+    await fetch("components/navbar.html")
+      .then((response) => response.text())
+      .then((res) => {
+        header.innerHTML = res;
+      });
+
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const student_id = urlParams.get("id");
+
+
+    await fetch(`http://surachai.edit.in.th:9000/api/student/${student_id}`)
+      .then((response) => response.json())
+      .then((res) => {
+        if (res.success){
+           document.querySelector("#student_id").value = res.data[0].student_id;
+           document.querySelector("#student").value = res.data[0].student_name;
+           document.querySelector("#email").value = res.data[0].email;
+           document.querySelector("#address").value = res.data[0].address;
+        }
+      });
+  });
+
+</script>

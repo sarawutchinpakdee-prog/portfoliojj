@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ระบบงานทะเบียน @101</title>
+    <link rel="stylesheet" href="assets/css/output.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <main
+      id="data"
+      class="max-w-7xl mx-auto my-4 md:my-8 grid grid-col-1 md:grid-cols-4 gap-2 md:gap-4 md:gap-y-2"
+    ></main>
+  </body>
+</html>
+
+<script>
+  async function doDelete(id) {
+    if (confirm(`ท่านต้องการลบข้อมูลนักเรียนรหัส: ${id}`)) {
+      await fetch(`http://surachai.edit.in.th:9000/api/student/${id}`, {
+        method: "delete",
+      })
+        .then(async (response) => await response.json())
+        .then((res) => {
+          if (res.success) {
+            window.location = "student.html";
+          } else {
+            console.log("Delete no OK");
+          }
+        });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const header = document.querySelector("#header");
+    await fetch("components/navbar.html")
+      .then((response) => response.text())
+      .then((res) => {
+        header.innerHTML = res;
+      });
+
+    try {
+      await fetch("http://surachai.edit.in.th:9000/api/student")
+        .then((response) => response.json())
+        .then((res) => {
+          if (res.success) {
+            const data = document.querySelector("#data");
+            let htmlText = "";
+            res.data.map((student) => {
+              htmlText += `<div class="bg-white border border-gray-300 rounded-md shadow-md p-4">
+                <div class="flex flex-row justify-between">
+                  <p class="text-xs text-gray-300">${student.student_id}</p>  
+                  <p><a href="student-form.html"><img src="assets/images/add-circle-svgrepo-com.svg" class="w-6 cursor-pointer" /></a></p>
+                </div>
+                <p class="text-2xl text-red-600 my-3">${student.student}</p>  
+                <p class="text-xs text-gray-600 flex flex-row"><img src="assets/images/email-open-svgrepo-com.svg" class="w-4 me-2" /> ${student.email}</p>  
+                <p class="flex flex-row justify-end mt-3">
+                  <a href="student-edit.html?id=${student.student_id}"><img src="assets/images/edit-svgrepo-com.svg" class="w-6 cursor-pointer me-2"></a>
+                  <span onclick="doDelete(${student.student_id})"><img src="assets/images/delete-2-svgrepo-com.svg" class="w-6 cursor-pointer"></span>
+                </p>
+              </div>`;
+            });
+            data.innerHTML = htmlText;
+          } else {
+            console.log(`Error`);
+          }
+        });
+    } catch (err) {
+      console.log(`Error: ${err.message}`);
+    }
+  });
+</script>
