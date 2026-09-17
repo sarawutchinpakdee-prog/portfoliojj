@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>วอศ.ร้อยเอ็ด</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/istyles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./">
+          <img
+            src="images/logo.jpg"
+            alt="โลโก้วิทยาลัยอาชีวศึกษาร้อยเอ็ด"
+            width="50"
+            height="50"
+          />
+
+          วอศ.ร้อยเอ็ด
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="rvc.html">ประวัติวิทยาลัย</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                แผนกวิชา
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="it.html">สารสนเทศเทคโนโลยี</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="accounting.html">การบัญชี</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="marketing.html">การตลาด</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <section
+        class="hero p-5 mb-5 text-white shadow-sm overflow-hidden rounded-4"
+      >
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <span class="text-primary mb-3">ยินดีต้อนรับ</span>
+            <h1 class="display-5 fw-bold">วิทยาลัยอาชีวศึกษา ร้อยเอ็ด</h1>
+            <p class="lead mb-4">
+              แหล่งเรียนรู้ที่ครอบคลุมทั้งวิชาชีพและทักษะดิจิทัล
+              เพื่อก้าวสู่อนาคตด้านการทำงานอย่างมั่นใจ.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-outline-light btn-lg" href="#departments"
+                >แผนกวิชา</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img
+              src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.99422-6/741820658_2211908092682893_5385588635573008244_n.png?stp=dst-jpg_tt6&cstp=mx1920x710&ctp=s1920x710&_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=S0kM6kEaDHkQ7kNvwF5-qfJ&_nc_oc=AdoeZJYJIEZnSdiAwuNsQCMCppDpACSRtNfwGp7C9SW6uqHK2lJxTcqXD6WVSTSI280&_nc_zt=14&_nc_ht=scontent-bkk1-2.xx&_nc_gid=DqZ1S1OcjjTdDYde9vv7BQ&_nc_ss=7b289&oh=00_AQB-pvHIFheTNE_HMX-N85mN2C_pdHAoFA7IrqWQ4DDidg&oe=6A6791ED"
+              alt="วิทยาลัยร้อยเอ็ด"
+              class="img-fluid rounded-4 shadow-lg border border-white border-3"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <h2 class="mb-1">ภาพสะท้อนการเรียนรู้</h2>
+            <p class="text-muted mb-0">กิจกรรมและบรรยากาศของวิทยาลัย</p>
+          </div>
+        </div>
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide rounded-4 overflow-hidden shadow-sm"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.99422-6/749651942_1010166148491325_1871271127309306190_n.png?stp=dst-jpg_tt6&cstp=mx2048x1368&ctp=s2048x1368&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_7SvL-HUZn8Q7kNvwGg3mTQ&_nc_oc=AdrdtSSVN8n8WAemL-fEj-p0_rl_x10fphbNqAltiewSDE3bAWH6GNTm5frzi_C9DjI&_nc_zt=14&_nc_ht=scontent-bkk1-1.xx&_nc_gid=he4-vcRBmQwdzA47-F9EYw&_nc_ss=7b289&oh=00_AQDXEC3CNH-pluiTRGc8YIiYyTck0HT6oTUY4y84ZLz8AA&oe=6A6779E5"
+                class="d-block w-100"
+                alt="ภาพกิจกรรมวิทยาลัย"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.99422-6/749652447_2197038530874041_3160538366624609710_n.png?stp=dst-jpg_tt6&cstp=mx1567x1045&ctp=s1567x1045&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEXNKBznIo5RAPgZemplIKkfqd9czfXo2p-p31zN9ejatfELDcgZWd2DhcmcF01GmWsNPmVyCh-AvA6E9PCUKDL&_nc_ohc=FfaDZB0YO1gQ7kNvwGl9vZ_&_nc_oc=AdqtD8dEsMtkeNdfM8NaPdKKkSsPTiDPOOzrXcu09cz4h5XegAEDvkdbhqv84ZbD2wc&_nc_zt=14&_nc_ht=scontent-bkk1-1.xx&_nc_gid=bjjIotIla4biMSt3c8xL1g&_nc_ss=7b2a8&oh=00_AQAvE5wPjf3A1bIDbvTAVstzBTT47HTca6c2GMS1m8pODg&oe=6A677C4C"
+                class="d-block w-100"
+                alt="บรรยากาศการเรียน"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.99422-6/752638685_1435351225306159_4170924321168564254_n.png?stp=dst-jpg_tt6&cstp=mx2048x1368&ctp=s2048x1368&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHwdW6BHwr2LBaxEPaMHAqjznGyjXTKIhDOcbKNdMoiEHk1EoHXaOTB282ah6GPyjwN8swrC13vfMmB3Q6OUFhR&_nc_ohc=AYyPOxnQoqsQ7kNvwEbAf-3&_nc_oc=AdoKMBGv0oQukbJcLQQB8mg36edXQ-Y_6R4gLcGJfF4hYqmCIhkh_ORHEyIqdglecEo&_nc_zt=14&_nc_ht=scontent-bkk1-1.xx&_nc_gid=TS4Yw3T13PaG9TEVig0F0w&_nc_ss=7b2a8&oh=00_AQDBarJwv9EotZCJsjyTeYr6FocYWcJWdFNQMgosyPuthg&oe=6A6796C9"
+                class="d-block w-100"
+                alt="สภาพแวดล้อมภายในวิทยาลัย"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="departments" class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="mb-1">แผนกวิชา</h2>
+            <p class="text-muted mb-0">เลือกแผนกที่เหมาะกับความสนใจของคุณ</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/442412634_792477813036450_2019576850105881889_n.jpg?stp=dst-jpg_tt6&cstp=mx500x500&ctp=s500x500&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF6pzfVatQKbW8Vf6ropCtGTSRBMazIkWhNJEExrMiRaOSB3mXn4DCdbG_cM6TsQIIspo3cCuCcQqoNdS9sBy7K&_nc_ohc=0cKCWLBMKVgQ7kNvwEN6mZ6&_nc_oc=AdqjmrE8SP3g6zoEIrTuAtRp_5OSTAVJAx_nXqVUlLLV0b96mGu_b9vO-zib9ZG44FY&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=JLxg-Iev4SLzVXu44eh5Xg&_nc_ss=7b2a8&oh=00_AQBODfPULCQBoCD-ESHTGR5hSvowtNP_FiZhZ3xczzRAEw&oe=6A6781B7"
+                class="card-img-top"
+                alt="สารสนเทศเทคโนโลยี"
+              />
+              <div class="card-body">
+                <h5 class="card-title">สารสนเทศเทคโนโลยี</h5>
+                <p class="card-text">
+                  หลักสูตรที่เน้นทักษะคอมพิวเตอร์ ระบบฐานข้อมูล
+                  และการพัฒนาเว็บไซต์.
+                </p>
+                <a href="it.html" class="btn btn-primary">ดูเพิ่มเติม</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/448873984_864343589064582_4834783742723343247_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHPqMMTHxLRp7NVDt5HDP6fPDTTgOj2_3Q8NNOA6Pb_dLqy5sAkIOjZ9LfSWFnVpeXASdmo61kvQeKVvYSNUj1B&_nc_ohc=Cr_8sGqmzV0Q7kNvwGOA14w&_nc_oc=AdpSFFgouYS3YTfFY-52G-RJtlyUOdjh4LPeSNZYX07Lq-3aPtkj1Qekql0AyNThSsQ&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=lB7lTUUtqZ4NYKurmvymdw&_nc_ss=7b2a8&oh=00_AQDYCMztBUgEEyM8Wh0mOMwtMaSnA5MA_IoBWlQmwdrROA&oe=6A678799"
+                class="card-img-top"
+                alt="การบัญชี"
+              />
+              <div class="card-body">
+                <h5 class="card-title">การบัญชี</h5>
+                <p class="card-text">
+                  สอนทักษะการจัดการทางการเงิน บัญชีธุรกิจ และการวิเคราะห์ข้อมูล.
+                </p>
+                <a href="accounting.html" class="btn btn-primary"
+                  >ดูเพิ่มเติม</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-1/649841346_10226393601465608_2663444870040292433_n.jpg?stp=dst-jpg_tt6&cstp=mx1336x1336&ctp=s160x160&_nc_cat=110&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeGDGY1QW3xqi-SKfgISVzqzVz7MyF2d-TZXPszIXZ35NtpGjkPT20taEiORD-4bWovlq_Gw0KSRD9AdV5-jJIlS&_nc_ohc=V6awARiDlLwQ7kNvwFFZ-Nc&_nc_oc=AdpwEc6eBrE-P2calrwqoLAtvRogRrtr7r2iZ4RsmRzwtWKqqKgU85Ub-K1XicwmWGY&_nc_zt=24&_nc_ht=scontent-bkk1-1.xx&_nc_gid=KWMFfkv8KQb_GbD1nuU7aQ&_nc_ss=7b2a8&oh=00_AQDYQyR3Hdj0nokorC6J-MUq3oPym5LtRiHEt2Mes-1goQ&oe=6A6773AF"
+                class="card-img-top"
+                alt="การตลาด"
+              />
+              <div class="card-body">
+                <h5 class="card-title">การตลาด</h5>
+                <p class="card-text">
+                  เพิ่มทักษะการวางแผน การสร้างแบรนด์ และการสื่อสารการตลาด.
+                </p>
+                <a href="marketing.html" class="btn btn-primary">ดูเพิ่มเติม</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

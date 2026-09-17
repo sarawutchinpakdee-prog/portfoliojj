@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตัวแปร</title>
+  </head>
+  <body>
+    <h1>โปรแกรมบวกเลข</h1>
+    <p>ค่าแรก: <input type="number" name="a" id="a" /></p>
+    <p>ค่าสอง: <input type="number" name="b" id="b" /></p>
+    <p>
+      <button id="btn">คำนวณ</button>
+    </p>
+    <script>
+      document.getElementById("btn").addEventListener("click", function () {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+
+        //consle.log(typeof a, typeof b);
+        //parseInt() แปลงค่าตัวเลขเป็นจำนวนเต็ม
+        //parseFloat() แปลงค่าตัวเลขเป็นจำนวนทศนิยม
+
+        let add = parseFloat(a) + parseFloat(b);
+        let subtract = parseFloat(a) - parseFloat(b);
+        let time = parseFloat(a) * parseFloat(b);
+        let divide = parseFloat(a) / parseFloat(b);
+
+        document.write(`${a} + ${b} = ${add}<br>`);
+        document.write(`${a} - ${b} = ${subtract}<br>`);
+        document.write(`${a} * ${b} = ${time}<br>`);
+        document.write(`${a} / ${b} = ${de}<br>`);
+      });
+    </script>
+  </body>
+</html>

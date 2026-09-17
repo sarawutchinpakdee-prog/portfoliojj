@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if1</title>
+    <style>
+      div {
+        width: 60%;
+        border: 1px solid black;
+        margin: auto;
+        padding: 10px;
+        box-shadow: 4px 4px 10px gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>รับยอดซื้อ</p>
+      <p><input type="number" id="price" /></p>
+      <p><input type="button" id="btn" value="คำนวณ" /></p>
+
+      <p>ผลลัพธ์: <span id="answer">???</span></p>
+    </div>
+    <script>
+      //สรา้งตัวแปร ชื่อ btn โดยอ้างอิงจาก id ของปุ่มคำนวณ
+      let b = document.getElementById("btn");
+      b.addEventListener("click", function () {
+        // อ่านค่าจาก input ที่มี id = price
+        let p = parseInt(document.getElementById("price").value);
+
+        if (p > 500) {
+          let lod = (p * 5) / 100;
+          p = p - lod;
+        }
+
+        // เอาตัวแปร p ที่อ่านได้ ไปแสดงที่ answer
+        document.getElementById("answer").textContent = p;
+      });
+    </script>
+  </body>
+</html>

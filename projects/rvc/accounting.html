@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>วอศ.ร้อยเอ็ด</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/istyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="./">
+          <img
+            src="images/logo.jpg"
+            alt="โลโก้วิทยาลัยอาชีวศึกษาร้อยเอ็ด"
+            width="40"
+            height="40"
+            class="me-2 rounded-circle border border-white"
+          />
+          วอศ.ร้อยเอ็ด
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="rvc.html">ประวัติวิทยาลัย</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="it.html">สารสนเทศเทคโนโลยี</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="accounting.html"
+                >การบัญชี</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="marketing.html">การตลาด</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-white text-center">
+      <div class="container py-5">
+        <h1 class="display-5 fw-bold">การบัญชี</h1>
+        <p class="lead mb-0">
+          รวมข้อมูลหลักสูตร ข่าวสาร และผลงานของนักเรียนสาขาการบัญชี
+        </p>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <ul class="nav nav-pills nav-fill mb-4" id="contentTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#home"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+          >
+            หน้าหลัก
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="projects-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#projects"
+            type="button"
+            role="tab"
+            aria-controls="projects"
+            aria-selected="false"
+          >
+            ผลงานผู้เรียน
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="contentTabsContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <div class="card shadow-sm border-0">
+                <div class="card-body">
+                  <h2 class="card-title">ยินดีต้อนรับ</h2>
+                  <p class="card-text">
+                    สาขาการบัญชีมุ่งเน้นให้นักเรียนมีความรู้ด้านบัญชี
+                    การจัดทำรายงานทางการเงิน และการใช้ระบบสารสนเทศเพื่อการบัญชี
+                    พร้อมโอกาสฝึกงานและส่งเสริมทักษะอาชีพ
+                  </p>
+                  <ul class="list-unstyled mb-0">
+                    <li>• การบันทึกบัญชีและปิดงบ</li>
+                    <li>• การจัดทำรายงานการเงิน</li>
+                    <li>• การใช้ซอฟต์แวร์บัญชี</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body">
+                  <h2 class="card-title">ข้อมูลหลักสูตร</h2>
+                  <p class="card-text">
+                    หลักสูตรออกแบบเพื่อให้ผู้เรียนสามารถปฏิบัติงานบัญชีในสถานประกอบการได้จริง
+                    มีการฝึกปฏิบัติและโครงงานที่เกี่ยวข้องกับการจัดการบัญชี
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="projects"
+          role="tabpanel"
+          aria-labelledby="projects-tab"
+        >
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <img
+                  src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/605246524_1291638819668388_9197947375378894510_n.jpg?stp=dst-jpg_tt6&cstp=mx1450x732&ctp=s1450x732&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF8z7EZv-rvbI5lX0GX8fiDpVdAxQVqB3qlV0DFBWoHejMyAur8PYTX9XGJpYOE5g2ZvPM7uBtcoFB06CJJwrd8&_nc_ohc=PXvi2UcKkigQ7kNvwF0VptC&_nc_oc=AdopZ5tGp35Hrq7L0tN7euZHotpQyAq7i1Qcn_MFoXMd5hQIj070KN3yqI2aMbZj-q8&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=-BFz41gK6RoFHvRn5q595w&_nc_ss=7b2a8&oh=00_AQCKXd-mBUUwM42uSS5ZNZQbTjr0oHoI4ungBldQCx9W3w&oe=6A678923"
+                  class="card-img-top"
+                  alt="Project 1"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">โครงการนักเรียน</h5>
+                  <p class="card-text">
+                    วันที่ 7 ธันวาคม 2568 นางธนพร เดชบุรัมย์ นางสาวธัญนรัตน์
+                    ธมนต์ทักษ์โภคิน นางสาวมุทิตา ทนุวรรณ์ ครูที่ปรึกษาชมรม
+                    และนักศึกษา ชมรมวิชาชีพการบัญชี
+                    ดำเนินโครงการพี่สอนน้อง(แนะแนว) ณ วิทยาลัยอาชีวศึกษาร้อยเอ็ด
+                    เพื่อช่วยให้ความรู้เกี่ยวกับบัญชีและได้แนะนำสาขาวิชาและได้แนะนำงานที่เราได้จบงานสาขานี้จะได้ทำอาชีพที่หลากหลายและเป็นปัจจุบัน
+                    และแนวโน้มตลาดแรงงาน
+                    เพื่อช่วยให้นักเรียนสามารถตัดสินใจเลือกเส้นทางการศึกษาและอาชีพได้อย่างมั่นใจและเหมาะสมกับตนเอง
+                    เพื่อสร้างความสัมพันธ์และความร่วมมือที่ดีระหว่างโรงเรียน
+                    ชุมชน และผู้ปกครอง
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <img
+                  src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/727490615_1442492704582998_8765942308307463146_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1368&ctp=s2048x1368&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEbdDQmvMivLwmOF9P3O0A8zZHfHC7MtDLNkd8cLsy0Mku8IxFsRG3dbW9w-baJQOnLF0Pl3LeVVU_AyPOCFv7n&_nc_ohc=TNSwXxG-nC4Q7kNvwF0xDqU&_nc_oc=Adq-THKKvTJlLNtxrN-qYXhE8lDaV6Y3LyD0Os-1iZ1OMXpfV2oGs-sj0-0KBLIDH8Y&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=0h9QbaLzlFq1pymzorNKxA&_nc_ss=7b2a8&oh=00_AQCRPzuxhgDAroXYPgYC2euDbhYkiyiipTrh5sfGL7OXIw&oe=6A677FF6"
+                  class="card-img-top"
+                  alt="Project 2"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">การอบรมและกิจกรรม</h5>
+                  <p class="card-text">
+                    ชมรมวิชาชีพการบัญชี ร่วมกับ ชมรม TO BE NUMBER ONE
+                    ดำเนินโครงการ “สุจริตจิตอาสา วัยรุ่นยุคใหม่ แยกแยะได้
+                    ไม่โกง” ณ โรงเรียนบ้านเล้าวิทยาคาร เพื่อส่งเสริมคุณธรรม
+                    จริยธรรม
+                    และปลูกฝังจิตสำนึกด้านความซื่อสัตย์สุจริตแก่ผู้เรียน
+                    กิจกรรมดังกล่าวมุ่งสร้างความตระหนักในการแยกแยะผลประโยชน์ส่วนตนและส่วนรวม
+                    พร้อมเสริมสร้างค่านิยมที่ดี
+                    เพื่อเติบโตเป็นพลเมืองที่มีคุณภาพของสังคมต่อไป
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

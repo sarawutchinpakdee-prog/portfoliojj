@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตัวแปร</title>
+  </head>
+  <body>
+    <h1>คำนวณหาค่าของ ที่ลด ร้อยละ 7</h1>
+    <p>ของชิ้น ที่ 1: <input type="number" name="a" id="a" /></p>
+    <p>ของชิ้น ที่ 2: <input type="number" name="b" id="b" /></p>
+    <p>ของชิ้น ที่ 3: <input type="number" name="c" id="c" /></p>
+    <p>ของชิ้น ที่ 4: <input type="number" name="d" id="d" /></p>
+    <p>คำตอบ : <span id="answer" style="color: blue">????</span></p>
+    <p>
+      <button id="btn">คำนวณ</button>
+    </p>
+    <script>
+      document.getElementById("btn").addEventListener("click", function () {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let c = parseFloat(document.getElementById("c").value);
+        let d = parseFloat(document.getElementById("d").value);
+        let pay = (a + b + c + d) * 0.93;
+
+        document.getElementById("answer").textContent = pay;
+        //document.write(`ค่าของที่ต้องจ่าย: ${pay} บาท`);
+      });
+    </script>
+  </body>
+</html>

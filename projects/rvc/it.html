@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>วอศ.ร้อยเอ็ด</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/istyles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="./">
+          <img
+            src="images/logo.jpg"
+            alt="โลโก้วิทยาลัยอาชีวศึกษาร้อยเอ็ด"
+            width="40"
+            height="40"
+            class="me-2 rounded-circle border border-white"
+          />
+          วอศ.ร้อยเอ็ด
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home"
+                >หน้าหลัก</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">ผลงานผู้เรียน</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-white text-center">
+      <div class="container py-5">
+        <h1 class="display-5 fw-bold">เทคโนโลยีสารสนเทศ</h1>
+        <p class="lead mb-0">
+          รวมผลงานและข่าวสารสำคัญของนักเรียนสาขาเทคโนโลยีสารสนเทศ
+        </p>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <ul class="nav nav-pills nav-fill mb-4" id="contentTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#home"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+          >
+            หน้าหลัก
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="projects-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#projects"
+            type="button"
+            role="tab"
+            aria-controls="projects"
+            aria-selected="false"
+          >
+            ผลงานผู้เรียน
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="contentTabsContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <div class="card shadow-sm border-0">
+                <div class="card-body">
+                  <h2 class="card-title">ยินดีต้อนรับ</h2>
+                  <p class="card-text">
+                    หน้าแนะนำสาขาเทคโนโลยีสารสนเทศ
+                    พร้อมข้อมูลสำคัญสำหรับนักเรียนและผู้เยี่ยมชม
+                  </p>
+                  <ul class="list-unstyled mb-0">
+                    <li>• พัฒนาทักษะดิจิทัล</li>
+                    <li>• สร้างสรรค์ผลงานจริง</li>
+                    <li>• พร้อมสู่สายอาชีพ</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body">
+                  <h2 class="card-title">ข้อมูลหลักสูตร</h2>
+                  <p class="card-text">
+                    สาขาเทคโนโลยีสารสนเทศมุ่งเน้นให้นักเรียนสามารถออกแบบ พัฒนา
+                    และบริหารจัดการระบบสารสนเทศได้อย่างมืออาชีพ
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="projects"
+          role="tabpanel"
+          aria-labelledby="projects-tab"
+        >
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <img
+                  src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/741963672_1365023659115193_8968351520648405257_n.jpg?stp=dst-jpg_tt6&cstp=mx1477x1108&ctp=s1477x1108&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHmZDMBPk90EYZrDnBAsBhp4IDu2sIEMtbggO7awgQy1n5BHKfWjyFLSYMtJ8HiDh_wyEP7ykuXq4x-hXk9YabW&_nc_ohc=VQKpaZKnXuYQ7kNvwEm_eKF&_nc_oc=Adq7arSGKcNM0jSBC0WlQ4kk8naJzs__wRfrBUT-6R5BrFL7oqy9F8ftnLqv_NEA_9I&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=kmfZmwJkJcqsg2NGDZUJAQ&_nc_ss=7b2a8&oh=00_AQC-6jcHlLBA-bP6XCL7Uj80osAwpYGvVJ61x7KpWizBKw&oe=6A677039"
+                  class="card-img-top"
+                  alt="Project 1"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">นักเรียนไปแข่งขัน</h5>
+                  <p class="card-text">
+                    ผลการดำเนินงานในครั้งนี้นับเป็นความสำเร็จของคณะครูผู้ควบคุมทีมและนักเรียน
+                    นักศึกษาของวิทยาลัยอาชีวศึกษาร้อยเอ็ด
+                    ที่สามารถแสดงศักยภาพด้านการเขียนโปรแกรมและการประยุกต์ใช้เทคโนโลยีปัญญาประดิษฐ์ได้อย่างโดดเด่น
+                    จนได้รับการคัดเลือกเข้าสู่การแข่งขันระดับประเทศ
+                    อันเป็นการสร้างชื่อเสียงและภาพลักษณ์ที่ดีให้แก่วิทยาลัยอาชีวศึกษาร้อยเอ็ด
+                    และเป็นการยกระดับศักยภาพผู้เรียนให้สอดคล้องกับนโยบายการพัฒนากำลังคนด้านดิจิทัลของประเทศ
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <img
+                  src="https://scontent-bkk1-2.xx.fbcdn.net/v/t39.30808-6/593461357_1192992869651607_4537868494716286952_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1363&ctp=s2048x1363&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGT6ZHe5DRJ3JPOBCWJuRU6GgpE2WliMq0aCkTZaWIyrbNneNtcRpolqOrpvilmjDfXFaedBVsZ_bKn7j-BGLtg&_nc_ohc=xlV1ay-iMykQ7kNvwHe_5-U&_nc_oc=AdrZIa6waS6YPfzdUlVwFdSm-aiDA8hA5oq2autqh-PusX8BbIUO84jmEc0LWyZlkI8&_nc_zt=23&_nc_ht=scontent-bkk1-2.xx&_nc_gid=v486xsVcks1OcEfSOlWoiw&_nc_ss=7b2a8&oh=00_AQCHPblUTNVQIfTmOrFM_ORlnvfZHXMOXA-HpzN6Bot1kQ&oe=6A678F44"
+                  class="card-img-top"
+                  alt="Project 2"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">ทักษะกีฬาอิเล็กทรอนิกส์ (E-Sport)</h5>
+                  <p class="card-text">
+                    นที่ 27 พฤศจิกายน 2568 นายเชาวฤทธิ์ ลำพาย
+                    ผู้อำนวยการวิทยาลัยอาชีวศึกษาร้อยเอ็ด
+                    รักษาการผู้อำนวยการสำนักงานอาชีวศึกษาจังหวัดร้อยเอ็ด
+                    เป็นประธานในพิธีเปิดงานประชุมวิชาการองค์การนักวิชาชีพในอนาคตแห่งประเทศไทย
+                    (อวท.) การแข่งขันทักษะวิชาชีพและทักษะพื้นฐาน
+                    ระดับจังหวัดร้อยเอ็ด ประจำปีการศึกษา 2568
+                    ทักษะกีฬาอิเล็กทรอนิกส์ (E-Sport) ระดับประกาศนียบัตรวิชาชีพ
+                    (ปวช.) และระดับประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.) ณ
+                    วิทยาลัยอาชีวศึกษาร้อยเอ็ด วิทยาเขตธวัชบุรี จังหวัดร้อยเอ็ด
+                    จัดโดย แผนกวิชาเทคโนโลยีสารสนเทศ วิทยาลัยอาชีวศึกษาร้อยเอ็ด
+                    นอกเหนือจากทักษะกีฬาอิเล็กทรอนิกส์ เรายังส่งเสริมให้นักเรียน
+                    เรียนรู้การจัดการกีฬาอีสปอตในฐานะผู้จัดอีกด้วย
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center py-4 bg-light">
+      <div class="container">
+        <small>© 2026 วอศ.ร้อยเอ็ด | เทคโนโลยีสารสนเทศ</small>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

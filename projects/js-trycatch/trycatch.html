@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TryCatch</title>
+  </head>
+  <body>
+    <!-- #show -->
+    <div id="show"></div>
+
+
+    <script>
+      try {
+        let answer = 25 / b;
+        let show = (document.querySelector("#show").textContent = answer);
+      } catch (err) {
+        document.querySelector("#show").textContent = err.message;
+      } finally {
+        setTimeout(() => {
+          document.querySelector("#show").textContent = "End.";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
+

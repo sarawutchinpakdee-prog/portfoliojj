@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap");
+
+body {
+  font-family: "Noto Sans Thai", sans-serif;
+  background: #eff4fb;
+  color: #1f2937;
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0d6efd 0%, #3b82f6 100%);
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+  color: #ffffff;
+}
+
+.hero .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.card {
+  border-radius: 1.25rem;
+}
+
+.card .card-img-top {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  height: 200px;
+  object-fit: cover;
+}
+
+.lead {
+  font-size: 1.03rem;
+}
+
+.section-title {
+  border-left: 4px solid #0d6efd;
+  padding-left: 12px;
+}
+
+.card-title,
+.card-text {
+  color: #1f2937;
+}
+
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+img {
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .card .card-img-top {
+    height: 150px;
+  }
+}
+
+.fb-plugin {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(31, 41, 55, 0.06);
+}
+
+.fb-plugin .fb-page {
+  width: 100% !important;
+}
